@@ -1,0 +1,27 @@
+{
+  "name": "denizbot",
+  "version": "1.0.0",
+  "description": "My very very useful discord bot xD",
+  "main": "index.js",
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "croxy-api": "^2.0.6",
+    "discord.js-commando": "^0.10.0",
+    "google-translate-api": "^2.3.0",
+    "install": "^0.13.0",
+    "moment": "^2.29.1",
+    "path": "^0.12.7",
+    "pokedex": "^1.1.0",
+    "pokedex-api": "^1.1.2",
+    "randomstring": "^1.1.5",
+    "request-promise-native": "^1.0.9",
+    "weather-js": "^2.0.0",
+    "ytdl-core": "^4.4.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "ReyizDeniZ",
+  "license": "MIT"
+}
