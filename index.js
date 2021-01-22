@@ -12,33 +12,33 @@ client.emotes = require('./config/emojis.json');
 client.filters = require('./config/filters.json');
 client.commands = new discord.Collection();
 
-fs.readdir('./events/', (err, files) => {
+fs.readdir('./eventler/', (err, files) => {
     if (err) return console.error(err);
     files.forEach(file => {
-        const event = require(`./events/${file}`);
+        const event = require(`./eventler/${file}`);
         let eventName = file.split(".")[0];
-        console.log(`Loading event ${eventName}`);
+        console.log(`${eventName} yükleniyor.`);
         client.on(eventName, event.bind(null, client));
     });
 });
 
-fs.readdir('./player-events/', (err, files) => {
+fs.readdir('./oyuncu-event/', (err, files) => {
     if (err) return console.error(err);
     files.forEach(file => {
-        const event = require(`./player-events/${file}`);
+        const event = require(`./oyuncu-event/${file}`);
         let eventName = file.split(".")[0];
-        console.log(`Loading player event ${eventName}`);
+        console.log(`${eventName} yükleniyor.`);
         client.player.on(eventName, event.bind(null, client));
     });
 });
 
-fs.readdir('./commands/', (err, files) => {
+fs.readdir('./komutlar/', (err, files) => {
     if (err) return console.error(err);
     files.forEach(file => {
         if (!file.endsWith(".js")) return;
-        let props = require(`./commands/${file}`);
+        let props = require(`./komutlar/${file}`);
         let commandName = file.split(".")[0];
-        console.log(`Loading command ${commandName}`);
+        console.log(`${commandName} yükleniyor.`);
         client.commands.set(commandName, props);
     });
 });
